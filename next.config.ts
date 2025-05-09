@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  distDir: 'build',
+  output: 'standalone',
+  env: {
+    CUSTOM_API_URL: process.env.CUSTOM_API_URL,
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
